@@ -9,7 +9,7 @@ st.image("GBET CAR LOGO.png", use_column_width=True)
 
 st.title("PAINEL -  GBET CAR - ADESÕES - MÊS DEZEMBRO 2024")
 
-df = pd.read_excel("dados2.xlsx", engine="openpyxls")
+df = pd.read_excel("dados2.xlsx", engine="openpyxl")
 
 col1, col2 , col3, col4, col5, col6, col7, col8 = st.columns(8)
 
