@@ -110,8 +110,8 @@ st.plotly_chart(fig_consultor, use_container_width=True)
 st.divider()
 
 df_filtrado = df[df["Classificacao"]=="NOVO"] 
-novo = df_filtrado.groupby(["Voluntario"]).count().reset_index()          
-fig_novo = px.bar(novo, x= "Voluntario", y= "Classificacao", barmode="group",text_auto=True, title= " Adesões NOVAS Por Consultor")
+novo = df_filtrado.groupby(["Voluntario", "Tipo"]).count().reset_index()          
+fig_novo = px.bar(novo, x= "Voluntario", y= "Classificacao", barmode="group",color="Tipo",text_auto=True, title= " Adesões NOVAS Por Consultor")
 st.plotly_chart(fig_novo)
 
 st.divider()
