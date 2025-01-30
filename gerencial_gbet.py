@@ -60,6 +60,12 @@ st.plotly_chart(fig_Cooperativa, use_container_width=True)
 
 st.divider()
 
+df_grouped = df.groupby(["Cooperativa", "Classificacao"])["Nome"].count().reset_index()
+classificacao = px.bar(df_grouped, x= "Cooperativa", y= "Classificacao",barmode="group",text="Nome",color="Classificacao", title= "Adesões por Cooperativas")
+st.plotly_chart(classificacao, use_container_width=True)
+
+st.divider()
+
 tipo = df.groupby(df["Tipo"])["Placa"].count().reset_index()
 fig_tipo = px.bar(tipo, x= "Tipo", y= "Placa", barmode="group",text_auto=True, color= "Tipo", title= "Quantidade por Tipo de Veículo")
 st.plotly_chart(fig_tipo, use_container_width=True) 
