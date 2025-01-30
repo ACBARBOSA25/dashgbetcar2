@@ -109,8 +109,8 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.divider()
 
-consultor = df.groupby(df["Voluntario"])[["Classificacao"]].value_counts().reset_index()       
-fig_consultor = px.bar(consultor, x= "Voluntario", y= "Classificacao",barmode="group", text_auto=True, color="Classificacao",title= " Classificacao por Consultor")
+df_grouped = df.groupby(["Voluntario","Classificacao"])["Nome"].count().reset_index()       
+fig_consultor = px.bar(df_grouped, x= "Voluntario", y= "Classificacao",barmode="group",color="Classificacao", text="Nome",title= " Classificacao por Consultor")
 st.plotly_chart(fig_consultor, use_container_width=True) 
 
 st.divider()
