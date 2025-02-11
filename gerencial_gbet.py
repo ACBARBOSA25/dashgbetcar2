@@ -11,7 +11,7 @@ df = pd.read_excel('dados.xlsx')
 fin = pd.read_excel('financeiro.xlsx')
     #df = df.sort_values("Cooperativa")
 
-st.title("PAINEL -  GBET CAR - ADESÕES - MÊS JANEIRO 2025")
+st.title("PAINEL -  GBET CAR - ADESÕES - MÊS FEVEREIRO 2025")
 
 col1, col2 , col3, col4 = st.columns(4)
 col5, col6, col7, col8 = st.columns(4)
