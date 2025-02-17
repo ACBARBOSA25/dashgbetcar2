@@ -65,6 +65,11 @@ classificacao = px.bar(df_grouped, x= "Cooperativa", y= "Classificacao",barmode=
 st.plotly_chart(classificacao, use_container_width=True)
 
 st.divider()
+ticket = df_filtered.groupby(["Cooperativa", "Tipo"])["Parcela"].mean().round(2).reset_index()        
+fig_novo = px.bar(ticket, x= "Cooperativa", y= "Tipo", color="Tipo", barmode="group",text="Parcela", title= " TICKET MÉDIO POR ESCRITÓRIO")
+st.plotly_chart(fig_novo) 
+
+st.divider()
 
 tipo = df.groupby(df["Tipo"])["Placa"].count().reset_index()
 fig_tipo = px.bar(tipo, x= "Tipo", y= "Placa", barmode="group",text_auto=True, color= "Tipo", title= "Quantidade por Tipo de Veículo")
