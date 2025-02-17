@@ -65,7 +65,7 @@ classificacao = px.bar(df_grouped, x= "Cooperativa", y= "Classificacao",barmode=
 st.plotly_chart(classificacao, use_container_width=True)
 
 st.divider()
-ticket = df_filtered.groupby(["Cooperativa", "Tipo"])["Parcela"].mean().round(2).reset_index()        
+ticket = df.groupby(["Cooperativa", "Tipo"])["Parcela"].mean().round(2).reset_index()        
 fig_novo = px.bar(ticket, x= "Cooperativa", y= "Tipo", color="Tipo", barmode="group",text="Parcela", title= " TICKET MÉDIO POR ESCRITÓRIO")
 st.plotly_chart(fig_novo) 
 
