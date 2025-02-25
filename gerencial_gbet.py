@@ -18,35 +18,35 @@ col5, col6, col7, col8 = st.columns(4)
 
 adesoes = df['Situacao'].count()
 with col1:
-     st.metric('Quant. de Adesões', round(adesoes))
+     st.metric('Quant. de Adesões', round(adesoes),border=True)
 
 novos = df['Classificacao'].isin(['NOVO']) .sum()
 with col2:
-     st.metric('Adesoes Novas', round(novos))
+     st.metric('Adesoes Novas', round(novos),border=True)
 
 renovacoes = df['Classificacao'].isin(['RENOVAÇÃO']) .sum()
 with col3:
-     st.metric('Renovacoes', round(renovacoes))
+     st.metric('Renovacoes', round(renovacoes),border=True)
 
 parcela = df['Parcela'].sum()
 with col4:
-     st.metric('Soma das Parcelas', round(parcela, 2))
+     st.metric('Soma das Parcelas', round(parcela, 2),border=True)
 
 media = df['Parcela'].mean()
 with col5:
-     st.metric('Ticket Médio', round(media, 2))
+     st.metric('Ticket Médio', round(media, 2),border=True)
 
 auto = df.loc[df['Tipo'] =="AUTOMOVEL"]['Parcela'].mean()
 with col6:
-     st.metric('Ticket Auto', round(auto,2 ))
+     st.metric('Ticket Auto', round(auto,2 ),border=True)
 
 moto = df.loc[df['Tipo'] =="MOTOCICLETA"]['Parcela'].mean()
 with col7:
-     st.metric('Ticket Moto', round(moto, 2))
+     st.metric('Ticket Moto', round(moto, 2),border=True)
 
 recebido = fin['Recebido'].sum()
 with col8:
-     st.metric('Recebido Mês', round(recebido, 2))
+     st.metric('Recebido Mês', round(recebido, 2),border=True)
 
 st.divider()
 
