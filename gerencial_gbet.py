@@ -17,7 +17,7 @@ df_filtered = df[df["Cooperativa"].isin(filtro_Cooperativa)] if  filtro_Cooperat
 filtro_financeiro = st.sidebar.multiselect('Filtro Recebimentos por Escritórios', fin["Cooperativa"].unique()) 
 fin_filtered = fin[fin["Cooperativa"].isin(filtro_financeiro)] if  filtro_financeiro else fin
 
-st.title("PAINEL - ADESÕES e FINANCEIRO - Março 2025")
+st.title("PAINEL - ADESÕES e FINANCEIRO - ABRIL 2025")
 
 col1, col2 , col3, col4 = st.columns(4)
 col5, col6, col7, col8 = st.columns(4)
