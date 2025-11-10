@@ -17,7 +17,7 @@ df_filtered = df[df["Cooperativa"].isin(filtro_Cooperativa)] if  filtro_Cooperat
 filtro_financeiro = st.sidebar.multiselect('Filtro Recebimentos por Escritórios', fin["Cooperativa"].unique()) 
 fin_filtered = fin[fin["Cooperativa"].isin(filtro_financeiro)] if  filtro_financeiro else fin
 
-st.title("PAINEL - ADESÕES e FINANCEIRO - OUTUBRO 2025")
+st.title("PAINEL - ADESÕES e FINANCEIRO - NOVEMBRO 2025")
 
 col1, col2 , col3, col4 = st.columns(4)
 col5, col6, col7, col8 = st.columns(4)
@@ -176,6 +176,7 @@ fig = px.pie(baixa, values='Usuario', names='Tipo_Baixa', title='Tipo da Baixa d
 fig.update_layout(legend_title="Tipo_Baixa", legend_y=0.9)
 fig.update_traces(textinfo='percent+label', textposition='inside')
 st.plotly_chart(fig, use_container_width=True)
+
 
 
 
